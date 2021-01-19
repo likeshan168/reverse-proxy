@@ -118,7 +118,7 @@ namespace Microsoft.ReverseProxy
                 });
         }
 
-        private IHost CreateHost(HttpProtocols httpProtocols, Action<IServiceCollection> configureServices, Action<IApplicationBuilder> configureApp)
+        private static IHost CreateHost(HttpProtocols httpProtocols, Action<IServiceCollection> configureServices, Action<IApplicationBuilder> configureApp)
         {
             return new HostBuilder()
                .ConfigureWebHost(webHostBuilder =>
