@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -178,7 +179,7 @@ namespace Microsoft.ReverseProxy
                 var cluster = new Cluster
                 {
                     Id = "cluster1",
-                    Destinations =
+                    Destinations = new Dictionary<string, Destination>(StringComparer.OrdinalIgnoreCase)
                     {
                         { "cluster1",  new Destination() { Address = destinationHostUrl } }
                     }
